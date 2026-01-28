@@ -1,0 +1,136 @@
+
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+body {
+	margin: 0;
+	font-family: 'nanumgothic';
+}
+
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #021024;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.navbar-brand i {
+	margin-right: 10px;
+	font-size: 1.2em;
+}
+
+.navbar-menu {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-menu li {
+	margin: 0 15px;
+}
+
+.navbar-menu a {
+	color: #f1f5f9;
+	text-decoration: none;
+	font-size: 0.95em;
+	transition: color 0.3s;
+	display: block;
+	padding: 5px 0;
+}
+
+.navbar-menu a:hover {
+	color: #94a3b8;
+}
+
+.navbar-menu a.active {
+	color: #cbd5e1;
+	border-bottom: 2px solid #94a3b8;
+}
+
+.navbar-toggle {
+	display: none;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+
+/* 반응형 디자인 */
+@media screen and (max-width: 768px) {
+	.navbar-menu {
+		display: none;
+		position: absolute;
+		top: 60px;
+		left: 0;
+		width: 100%;
+		background-color: #334155;
+		flex-direction: column;
+		padding: 10px 0;
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	}
+	.navbar-menu.responsive {
+		display: flex;
+	}
+	.navbar-menu li {
+		margin: 10px 20px;
+	}
+	.navbar-toggle {
+		display: block;
+	}
+}
+
+/* 지도 컨테이너 조정 */
+#map {
+	margin-top: 60px; /* 네비게이션 바 높이만큼 여백 추가 */
+	width: 100%;
+	height: calc(100vh - 60px); /* 화면 높이에서 네비게이션 바 높이를 뺌 */
+	position: relative;
+  	z-index: 1;
+}
+.legend {
+  position: fixed;
+  z-index: 1000;
+  /* 기존 스타일 유지 */
+}
+
+.area-tooltip {
+    position: absolute;
+    padding: 6px 6px;
+    border-radius: 4px;
+    background: #fff;
+    font-family: 'nanumgothic';
+    font-size: 13px;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transform: translate(-50%, -120%);
+    z-index: 1000;
+}
+
+.area-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 76, 128, 0.9) transparent transparent transparent;
+}

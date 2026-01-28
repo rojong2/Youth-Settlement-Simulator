@@ -1,0 +1,261 @@
+/* 공통 변수 */
+:root {
+    --primary-color: #021024;
+    --secondary-color: #94a3b8;
+    --background-light: #f8fafc;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+@import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
+.navbar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: #021024;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	z-index: 1000;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	color: white;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.navbar-brand i {
+	margin-right: 10px;
+	font-size: 1.2em;
+}
+
+.navbar-menu {
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.navbar-menu li {
+	margin: 0 15px;
+}
+
+.navbar-menu a {
+	color: #f1f5f9;
+	text-decoration: none;
+	font-size: 0.95em;
+	transition: color 0.3s;
+	display: block;
+	padding: 5px 0;
+}
+
+.navbar-menu a:hover {
+	color: #94a3b8;
+}
+
+.navbar-menu a.active {
+	color: #cbd5e1;
+	border-bottom: 2px solid #94a3b8;
+}
+
+.navbar-toggle {
+	display: none;
+	background: none;
+	border: none;
+	color: white;
+	font-size: 1.5em;
+	cursor: pointer;
+}
+body {
+	font-family: 'nanumgothic';
+	background-color: #f8f9fa;
+	color: #333;
+	line-height: 1.6;
+	margin:0
+}
+
+/* 전체 컨테이너 */
+.profile-container {
+    padding: 80px 20px 20px;
+    max-height: 100vh;
+    background-color: var(--background-light);
+}
+
+.main-content-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* 사이드바 */
+.sidebar-profile {
+    position: sticky;
+    top: 100px;
+}
+
+.profile-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    overflow: hidden;
+}
+
+.profile-header {
+    padding: 30px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), #03256C);
+    color: #fff;
+}
+
+.profile-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+}
+
+.profile-nav {
+    padding: 20px 0;
+}
+
+.nav-item {
+    display: block;
+    padding: 15px 25px;
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background-color: var(--background-light);
+}
+
+.nav-item.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* 컨텐츠 영역 */
+.info-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    margin-bottom: 30px;
+}
+
+.card-header {
+    padding: 20px 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+    margin: 0;
+    color: var(--primary-color);
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.info-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.info-value {
+    color: #64748b;
+    word-break: break-all;
+}
+
+.profile-content{
+	padding-left:30px;
+}
+
+/* 폼 스타일 */
+form {
+    margin-top: 20px;
+    padding-left:20px;
+    padding-top:20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+input[type="text"], select {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.update-btn, .cancel-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.update-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.update-btn:hover {
+    background-color: #03256C;
+}
+
+.cancel-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.cancel-btn:hover {
+    background-color: #c0c0c0;
+}
+
+/* 반응형 */
+@media(max-width:768px){
+    .main-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .sidebar-profile {
+        position: static;
+        margin-bottom: 30px;
+    }
+}
